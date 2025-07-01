@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>WellMares</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Sixtyfour&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <h1>All mares today!</h1>
+    <div class="mare-container" id="mare-container">
+        <img src="https://derpicdn.net/img/2016/3/3/1101333/large.png" id="mare-img" alt="Mare" />
+    </div>
+    <div class="stats-container">
+        <div class="boop-count-display">
+            Mare booped <span id="boop-count"><span id="boop-count-inner">0</span></span> times.
+        </div>
+    </div>
+    <div class="button-container">
+        <button id="boop-btn" disabled>Connecting<span class="loading-dots"></span></button>
+    </div>
+    <script type="module" src="./src/front/index.js"></script>
+</body>
+
+</html>

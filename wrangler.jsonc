@@ -1,0 +1,37 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "wellmares",
+	"main": "src/back/index.js",
+	"compatibility_date": "2025-06-17",
+	"assets": {
+		"not_found_handling": "single-page-application",
+		"binding": "ASSETS",
+		"run_worker_first": [
+			"/ws"
+		]
+	},
+	"services": [
+		{
+			"binding": "FIREBASE_TOKEN_SERVICE",
+			"service": "firebase-token-service"
+		}
+	],
+	"kv_namespaces": [
+		{
+			"binding": "FIREBASE_TOKEN_CACHE",
+			"id": "f3f6cbaa001747cb88e1d772d9a86d91"
+		}
+	],
+	"observability": {
+		"enabled": true
+	},
+	"triggers": {
+		"crons": [
+			"30 * * * *"
+		]
+	}
+}
