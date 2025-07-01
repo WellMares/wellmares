@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "es2022",
+        "lib": [
+            "es2022"
+        ],
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "noEmit": true,
+        "strict": true,
+        "types": [
+            "@cloudflare/workers-types",
+            "node"
+        ],
+        "allowJs": true,
+    },
+    "include": [
+        "**/*.js"
+    ]
+}

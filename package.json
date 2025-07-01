@@ -1,0 +1,25 @@
+{
+	"name": "wellmares",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "npm run build && vite preview",
+		"deploy": "npm run build && wrangler deploy",
+		"deploy-non-prod": "npm run build && wrangler versions upload",
+		"deploy-firebase-token-service": "wrangler -c src/firebase-token-service/wrangler.jsonc deploy",
+		"deploy-firebase-token-service-non-prod": "wrangler -c src/firebase-token-service/wrangler.jsonc versions upload"
+	},
+	"dependencies": {
+		"@cloudflare/workers-types": "^4.20250620.0"
+	},
+	"devDependencies": {
+		"@cloudflare/vite-plugin": "^1.7.5",
+		"firebase": "^11.9.1",
+		"firebase-admin": "^13.4.0",
+		"vite": "^6.3.5",
+		"wrangler": "^4.21.2"
+	}
+}
