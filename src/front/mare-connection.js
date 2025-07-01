@@ -539,7 +539,7 @@ class MareConnection extends EventTarget {
 
         // Boop count message
         if (data.startsWith(PROTO_BOOP_COUNT)) {
-            const match = data.slice(PROTO_BOOP_COUNT.length).match(/^([0-9a-z]{1,7})$/);
+            const match = data.slice(PROTO_BOOP_COUNT.length).match(/^([0-9a-z]{1,11})$/);
             if (!match) {
                 console.warn('Received invalid data:', { data });
                 return;
@@ -551,7 +551,7 @@ class MareConnection extends EventTarget {
 
         // Boop acceptance
         if (data.startsWith(PROTO_BOOP_REPLY)) {
-            const match = data.slice(PROTO_BOOP_REPLY.length).match(/^([0-9a-z]{1,7})$/);
+            const match = data.slice(PROTO_BOOP_REPLY.length).match(/^([0-9a-z]{1,11})$/);
             if (!match) {
                 console.warn('Received invalid data:', { data });
                 return;
@@ -570,7 +570,7 @@ class MareConnection extends EventTarget {
 
         // Boop rejection
         if (data.startsWith(PROTO_BOOP_REJECT)) {
-            const match = data.slice(PROTO_BOOP_REJECT.length).match(/^([0-9a-z]{1,7}),([0-9a-z]{1,7})$/);
+            const match = data.slice(PROTO_BOOP_REJECT.length).match(/^([0-9a-z]{1,11}),([0-9a-z]{1,11})$/);
             if (!match) {
                 console.warn('Received invalid data:', { data });
                 return;
@@ -590,7 +590,7 @@ class MareConnection extends EventTarget {
 
         // Cooldown query response
         if (data.startsWith(PROTO_COOLDOWN_REPLY)) {
-            const match = data.slice(PROTO_COOLDOWN_REPLY.length).match(/^([0-9a-z]{1,7})(?:,([0-9a-z]{1,7}))?$/);
+            const match = data.slice(PROTO_COOLDOWN_REPLY.length).match(/^([0-9a-z]{1,11})(?:,([0-9a-z]{1,11}))?$/);
             if (!match) {
                 console.warn('Received invalid data:', { data });
                 return;
