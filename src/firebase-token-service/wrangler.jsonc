@@ -12,7 +12,5 @@
     "compatibility_flags": [
         "nodejs_compat"
     ],
-    "observability": {
-        "enabled": true
-    }
+    "observability": {  "enabled": true }
 }
