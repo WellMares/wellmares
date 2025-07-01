@@ -520,7 +520,7 @@ class WellMaresWSHandler {
 
         const now = Date.now();
         if (data.startsWith(PROTO_BOOP_REQUEST)) {
-            const match = data.slice(PROTO_BOOP_REQUEST.length).match(/^([\da-z]{1,7})$/);
+            const match = data.slice(PROTO_BOOP_REQUEST.length).match(/^([\da-z]{1,11})$/);
             if (match) {
                 this.#onBoop(now, parseInt(match[1], 36));
                 return;
@@ -528,7 +528,7 @@ class WellMaresWSHandler {
         }
 
         if (data.startsWith(PROTO_COOLDOWN_QUERY)) {
-            const match = data.slice(PROTO_COOLDOWN_QUERY.length).match(/^([\da-z]{1,7})$/);
+            const match = data.slice(PROTO_COOLDOWN_QUERY.length).match(/^([\da-z]{1,11})$/);
             if (match) {
                 this.#onCooldownQuery(parseInt(match[1], 36), now);
                 return;
